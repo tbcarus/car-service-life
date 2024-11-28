@@ -24,7 +24,7 @@ public class Car extends AbstractBaseEntity {
 
     @ToString.Exclude
     @ManyToOne
-    @JoinColumn(name = "user_id")
+    @JoinColumn(name = "user_id", nullable = false)
     private User user;
 
     @OneToMany(cascade = CascadeType.ALL)

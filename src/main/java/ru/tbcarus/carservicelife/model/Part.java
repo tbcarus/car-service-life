@@ -25,6 +25,7 @@ public class Part extends AbstractBaseEntity {
     private Integer intervalDate;
 
     @OneToMany(cascade = CascadeType.ALL)
+    @JoinColumn(name = "part_id")
     private List<Replacement> replacements;
 
     @ManyToOne

@@ -2,6 +2,7 @@ package ru.tbcarus.carservicelife.model;
 
 import jakarta.persistence.*;
 import lombok.Data;
+import lombok.ToString;
 import org.hibernate.annotations.CreationTimestamp;
 
 import java.time.LocalDate;
@@ -13,6 +14,7 @@ public class Replacement extends AbstractBaseEntity {
     private String name;
     private String partName; // название/производитель/параметры детали
 
+    @ToString.Exclude
     @ManyToOne
     @JoinColumn(name = "part_id")
     private Part part;
