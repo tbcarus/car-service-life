@@ -11,8 +11,11 @@ import java.time.LocalDate;
 @Entity
 @Table(name = "replacements")
 public class Replacement extends AbstractBaseEntity {
+    private Integer mileage;
     private String name;
     private String partName; // название/производитель/параметры детали
+    private String reason;
+    private String description;
 
     @ToString.Exclude
     @ManyToOne
@@ -22,10 +25,6 @@ public class Replacement extends AbstractBaseEntity {
     @OneToOne
     @JoinColumn(name = "prev_replacement_id")
     private Replacement previousReplacement;
-
-    private String reason;
-
-    private String description;
 
     @CreationTimestamp
     @Column(name = "create_date")
